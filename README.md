@@ -40,6 +40,7 @@ Where "type" permits either of two values: "sum" or "difference" and the payload
 
 
 ## Project Structure
+NOTE: Development environment: Fedora Linux (Fedora 34 Workstation)
 * raysecurTechnicalProblem
     * server
         * contains the code for the http server
@@ -76,6 +77,17 @@ Check the following flags in the raysecurTechnicalProblem/server/makefile. If yo
 * ASIO = 
 * JSON = 
 
-### Configuring node packages
+### node.js WebSocket (ws)
 1. cd {raysecurTechnicalProblem}/client
 2. npm install ws
+
+## Running The Client and Server
+1. Open two Terminals
+2. In terminal 1:
+    1. cd {raysecurTechnicalProblem}/server
+    2. make
+    3. ./server.exe
+3. In terminal 2:
+    1. cd {raysecurTechnicalProblem}/client
+    2. node ClientMain.js
+
