@@ -1,3 +1,4 @@
+// Object to represent the JSON requests
 function AddSubRequest(type, a, b) {
     this.type = type;
     this.payload = new Payload(a,b);

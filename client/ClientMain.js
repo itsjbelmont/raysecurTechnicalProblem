@@ -19,6 +19,7 @@ async function connectAndSendRequests() {
     // Setup websocket client
     const url = 'ws://localhost:9002';
 
+    // Loop over an array of requests and send them out
     requests = [
         new AddSubRequest('add', 10, 5), 
         new AddSubRequest('add', -5, -10),
@@ -29,7 +30,6 @@ async function connectAndSendRequests() {
         new AddSubRequest('sub', 40, 100), 
         new AddSubRequest('sub', 100, 87), 
     ];
-
     for (i = 0; i < requests.length; i++) {
         req = requests[i];
         addClient = new AddSubClient(url, req);

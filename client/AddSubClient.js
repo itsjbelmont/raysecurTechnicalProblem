@@ -3,6 +3,7 @@ const WebSocket = require('ws');
 // The object of our request - to be converted to JSON
 const AddSubRequest = require('./AddSubRequest');
 
+// Object for connecting to the websockets and sending the request objects
 function AddSubClient(url, objToSend) {
     // Member Variables
     this.url = url;
