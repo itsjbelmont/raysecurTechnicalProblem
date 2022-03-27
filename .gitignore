@@ -3,4 +3,5 @@ websocketpp/
 client/node_modules/
 json/
 *.o
+*.exe
 *~

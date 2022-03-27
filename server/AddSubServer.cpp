@@ -75,26 +75,27 @@ std::string AddSubServer::processJsonReqStr(std::string request)
     uint b = jsonRequest["payload"]["b"];
 
     uint returnVal = 0;
+    std::string returnType = "ERROR";
 
     if (type.compare("add") == 0) 
     {
         std::cout << "Adding " << a << " + " << b << std::endl;
         returnVal = a + b;
+        returnType = "addition";
     }
     else if (type.compare("sub") == 0)
     {
         std::cout << "Subtracting " << a << " - " << b << std::endl;
         returnVal = a - b;
+        returnType = "difference";
     }
     else
     {
-        // Couldnt process this 'type' - set the json object fields to reflect an error
+        // Couldnt process this 'type' - default return type ERROR and payload 0 will be used
         std::cout << "Unknown type in request" << std::endl;
-        type = "ERROR";
-        returnVal = 0;
     }
 
-    response["type"] = type;
+    response["type"] = returnType;
     response["payload"] = returnVal;
 
     return response.dump();
