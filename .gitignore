@@ -1,4 +1,6 @@
 asio*/
 websocketpp/
 client/node_modules/
+json/
+*.o
 *~

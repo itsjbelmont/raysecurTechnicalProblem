@@ -12,7 +12,7 @@
 #include "CommonTypes.hpp"
 
 int main() {
-    std::cout << "TESTING" << std::endl;
+    std::cout << "STARTING SERVER MAIN" << std::endl;
     AddSubServer addSubServer = AddSubServer();
     addSubServer.run();
 }

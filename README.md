@@ -48,7 +48,9 @@ Where "type" permits either of two values: "sum" or "difference" and the payload
     * asio-1.22.1
         * third party dependency. see next section for installation proceedure (not tracked by git)
     * websocketpp
-        * third party dependency. see enxt section for installation proceedure (not tracked by git)
+        * third party dependency. see next section for installation proceedure (not tracked by git)
+    * json
+        * third party dependency. see next section for installation proceedure (not tracked by git)
 
 
 ## Installing Dependancies
@@ -64,7 +66,12 @@ Before running the code in this project's githup directory you must install the 
 3. tar -xzvf {tarfile}
 4. rm -f {tarfile}
 
+### json
+1. cd {raysecurTechnicalProblem}
+2. git clone https://github.com/nlohmann/json.git
+
 ### CHECK THE CONFIGURATION IN THE SERVER MAKEFILE
 Check the following flags in the raysecurTechnicalProblem/server/makefile. If you have installed these files to separate directories than what I did in my configuration then you will need to update these local paths
 * WEBSOCKETPP =
 * ASIO = 
+* JSON = 

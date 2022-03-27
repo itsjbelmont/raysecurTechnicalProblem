@@ -7,7 +7,8 @@ CC = g++
 CVERSION = -std=c++11
 WEBSOCKETPP = -I ../websocketpp
 ASIO = -I ../asio-1.22.1/include
-CFLAGS = $(CVERSION) $(WEBSOCKETPP) $(ASIO) -pthread
+JSON = -I ../json/include
+CFLAGS = $(CVERSION) $(WEBSOCKETPP) $(ASIO) $(JSON) -pthread
 
 #############################################
 # Targets
