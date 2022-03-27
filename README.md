@@ -75,3 +75,7 @@ Check the following flags in the raysecurTechnicalProblem/server/makefile. If yo
 * WEBSOCKETPP =
 * ASIO = 
 * JSON = 
+
+### Configuring node packages
+1. cd {raysecurTechnicalProblem}/client
+2. npm install ws
