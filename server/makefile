@@ -7,17 +7,20 @@ CC = g++
 CVERSION = -std=c++11
 WEBSOCKETPP = -I ../websocketpp
 ASIO = -I ../asio-1.22.1/include
-CFLAGS = $(CVERSION) $(WEBSOCKETPP) $(ASIO)
+CFLAGS = $(CVERSION) $(WEBSOCKETPP) $(ASIO) -pthread
 
 #############################################
 # Targets
 
-server.exe: serverMain.o
-	$(CC) $(CFLAGS) -o server.exe serverMain.o
+server.exe: ServerMain.o AddSubServer.o
+	$(CC) $(CFLAGS) -o server.exe ServerMain.o AddSubServer.o
 
-serverMain.o: serverMain.cpp
-	$(CC) $(CFLAGS) -c serverMain.cpp
+ServerMain.o: ServerMain.cpp CommonTypes.hpp
+	$(CC) $(CFLAGS) -c ServerMain.cpp
+
+AddSubServer.o: AddSubServer.cpp AddSubServer.hpp CommonTypes.hpp
+	$(CC) $(CFLAGS) -c AddSubServer.cpp
 
 clean:
-	rm server.exe serverMain.o
+	rm server.exe ServerMain.o AddSubServer.o
 
