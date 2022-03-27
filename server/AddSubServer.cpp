@@ -71,23 +71,24 @@ std::string AddSubServer::processJsonReqStr(std::string request)
     json response;
 
     std::string type = jsonRequest["type"];
-    uint a = jsonRequest["payload"]["a"];
-    uint b = jsonRequest["payload"]["b"];
+    std::int64_t a = jsonRequest["payload"]["a"];
+    std::int64_t b = jsonRequest["payload"]["b"];
 
-    uint returnVal = 0;
+    std::int64_t returnVal = 0;
     std::string returnType = "ERROR";
 
     if (type.compare("add") == 0) 
     {
-        std::cout << "Adding " << a << " + " << b << std::endl;
         returnVal = a + b;
         returnType = "addition";
+        std::cout << "Adding " << a << " + " << b << " = " << returnVal << std::endl;
     }
     else if (type.compare("sub") == 0)
     {
-        std::cout << "Subtracting " << a << " - " << b << std::endl;
         returnVal = a - b;
         returnType = "difference";
+        std::cout << "Subtracting " << a << " - " << b << " = " << returnVal << std::endl;
+
     }
     else
     {
